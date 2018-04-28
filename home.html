@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+    ol.carousel-indicators {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+
+  ol.carousel-indicators li
+  ol.carousel-indicators li.active {
+    background: yellow;
+  }
+
+.navbar
+{
+  background-color:white;
+color:black;
+height:80px;
+}
+.alg
+{
+  margin-left:150px;
+}
+
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Bitter|Gugi|Source+Sans+Pro" rel="stylesheet">
+
+  </head>
+  <body>
+
+<div>
+
+  <nav class="navbar navbar-fixed-top ">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="margin-top:13px">Brand</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-top:13px">
+      <ul class="nav navbar-nav" style="margin-left:300px">
+        <li class="active" style="margin-right:40px">
+          <div class="dropdown" v-on:mouseover="check" v-on:mouseout="show=false" id="el2">
+            <div class="modify" v-on:mouseover="rotatea" v-on:mouseout="rotatee">MENU<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"  v-bind:class="{rot:rote,rote:rot3}"  style="margin-left:3px;font-size:10px"></span></div>
+            <transition name="test">
+            <div v-if="show"class="dropdown-content" v-on:mouseover="t=true" v-on:mouseout="t=false">
+              <a href="#" >Link 1</a>
+              <a href="#" >Link 2</a>
+              <a href="#"  >Link 3</a>
+            </div>
+          </transition>
+          </div>
+
+        </li>
+        <li style="margin-right:40px">
+          <div class="dropdown" v-on:mouseover="check" v-on:mouseout="show=false" id="el">
+            <div class="modify" v-on:mouseover="rotatea" v-on:mouseout="rotatee">MENU<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"  v-bind:class="{rot:rote,rote:rot3}"  style="margin-left:3px;font-size:10px"></span></div>
+            <transition name="test">
+            <div v-if="show"class="dropdown-content" v-on:mouseover="t=true" v-on:mouseout="t=false">
+              <a href="#" >Link 1</a>
+              <a href="#" >Link 2</a>
+              <a href="#"  >Link 3</a>
+            </div>
+          </transition>
+          </div>
+        </li>
+        <li style="margin-right:40px">
+          <div class="dropdown" v-on:mouseover="check" v-on:mouseout="show=false" id="el3">
+            <div class="modify" v-on:mouseover="rotatea" v-on:mouseout="rotatee" >MENU<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"  v-bind:class="{rot:rote,rote:rot3}" style="margin-left:3px;font-size:10px"></span></div>
+            <transition name="test">
+            <div v-if="show"class="dropdown-content" v-on:mouseover="t=true" v-on:mouseout="t=false">
+              <a href="#" >Link 1</a>
+              <a href="#" >Link 2</a>
+              <a href="#"  >Link 3</a>
+            </div>
+          </transition>
+          </div>
+        </li>
+        <li style="margin-right:40px">
+          <div class="dropdown" v-on:mouseover="check" v-on:mouseout="show=false" id="el4">
+            <div class="modify" v-on:mouseover="rotatea" v-on:mouseout="rotatee" >MENU<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"  v-bind:class="{rot:rote,rote:rot3}"  style="margin-left:3px;font-size:10px"></span></div>
+            <transition name="test">
+            <div v-if="show"class="dropdown-content" v-on:mouseover="t=true" v-on:mouseout="t=false">
+              <a href="#" >Link 1</a>
+              <a href="#" >Link 2</a>
+              <a href="#"  >Link 3</a>
+            </div>
+          </transition>
+          </div>
+        </li>
+      </ul>
+
+
+    </div>
+  </div>
+</nav>
+</div>
+
+<div class="container" style="margin-left:0px;margin-right:0px;width:1360px;height:200px">
+<h2>Carousel Example</h2>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<!-- Indicators -->
+<ol class="carousel-indicators">
+  <li data-target="#myCarousel" data-slide-to="0" class="active" style="color:'cyan';background-color:'goldenrod'"></li>
+  <li data-target="#myCarousel" data-slide-to="1"></li>
+</ol>
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner">
+  <div class="item active">
+    <img src="1.jpg" alt="Los Angeles" style="width:100%;">
+  </div>
+
+  <div class="item">
+    <img src="4.jpg" alt="New york" style="width:100%;">
+  </div>
+</div>
+
+<div >
+<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+  <span class="glyphicon glyphicon-chevron-left"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control" href="#myCarousel" data-slide="next">
+  <span class="glyphicon glyphicon-chevron-right"></span>
+  <span class="sr-only">Next</span>
+</a>
+</div>
+</div>
+
+</div>
+<div id="check">
+<button v-on:click="sh=!sh">Click</button>
+  <transition name="tes2">
+</transition>
+</div>
+<script>
+new Vue({
+el:"#check",
+data:{
+  sh:false
+}
+});
+new Vue({
+el:"#el",
+data:{
+  show:false,
+  sh:false,
+  t:false,
+  rote:false,
+  rot3:false
+},
+methods:{
+rotatea:function()
+{
+  this.rote=true;
+  this.rot3=false;
+},
+rotatee:function()
+{
+  this.rote=false;
+  this.rot3=true;
+
+},
+check:function(){
+
+  this.show=true;
+this.t=true;
+if(this.t==true)
+{
+  this.show=true;
+}
+},
+leave:function()
+{
+  this.t=false
+
+}
+}
+});
+
+new Vue({
+el:"#el2",
+data:{
+  show:false,
+  sh:false,
+  t:false,
+  rote:false,
+  rot3:false
+},
+methods:{
+rotatea:function()
+{
+  this.rote=true;
+  this.rot3=false;
+},
+rotatee:function()
+{
+  this.rote=false;
+  this.rot3=true;
+
+},
+check:function(){
+
+  this.show=true;
+this.t=true;
+if(this.t==true)
+{
+  this.show=true;
+}
+},
+leave:function()
+{
+  this.t=false
+
+}
+}
+});
+new Vue({
+el:"#el4",
+data:{
+  show:false,
+  sh:false,
+  t:false,
+  rote:false,
+  rot3:false
+},
+methods:{
+rotatea:function()
+{
+  this.rote=true;
+  this.rot3=false;
+},
+rotatee:function()
+{
+  this.rote=false;
+  this.rot3=true;
+
+},
+check:function(){
+
+  this.show=true;
+this.t=true;
+if(this.t==true)
+{
+  this.show=true;
+}
+},
+leave:function()
+{
+  this.t=false
+
+}
+}
+});
+
+
+new Vue({
+el:"#el3",
+data:{
+  show:false,
+  sh:false,
+  t:false,
+  rote:false,
+  rot3:false
+},
+methods:{
+rotatea:function()
+{
+  this.rote=true;
+  this.rot3=false;
+},
+rotatee:function()
+{
+  this.rote=false;
+  this.rot3=true;
+
+},
+check:function(){
+
+  this.show=true;
+this.t=true;
+if(this.t==true)
+{
+  this.show=true;
+}
+},
+leave:function()
+{
+  this.t=false
+
+}
+}
+});
+</script>
+<style>
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown-content
+{
+    position: absolute;
+    margin-top:32px;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.test-enter-active {
+  transition: all .3s ease;
+}
+.test-leave-active {
+  transition: all .8s ease;
+}
+.test-enter, .test-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(10px);
+  opacity: 0;
+}
+.tes2-enter-active {
+  transition: all .3s ease;
+}
+.tes2-leave-active {
+  transition: all .8s ease;
+}
+.tes2-enter, .tes2-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.id
+{
+  margin-left:200px;
+  margin-top:200px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.list
+{
+  background-color:goldenrod;
+  width:70px;
+  height:30px;
+  color:cyan;
+
+    position:relative;
+    display:inline-block;
+}
+.itm{
+  position:absolute;
+
+}
+.algn{
+  position:relative;
+  display:inline-block;
+}
+
+.rot{
+  transform:rotate(180deg);
+  transition:0.5s ease;
+}
+.rote{
+  transform:rotate(0deg);
+  transition:0.5s linear;
+}
+.modify
+{
+  font-family: 'Bitter', serif;
+margin-top:13px;
+cursor:pointer;
+font-size:15px;
+}
+li:hover{
+  color:#40E0D0;
+}
+</style>
+
+</body>
+</html>
